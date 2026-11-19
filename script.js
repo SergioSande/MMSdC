@@ -3607,14 +3607,16 @@ window.setLanguage = function(lang) {
         }
     }
     
-    // 3. Update Emesports direct registration & participants links to match active language
-    var regLinks = document.querySelectorAll('a[data-i18n="btn_register_now"], a[data-i18n="sub_ins_here"]');
-    for (var r = 0; r < regLinks.length; r++) {
-        regLinks[r].setAttribute('href', 'https://eventos.emesports.es/inscripcion/i-media-maraton-santiago-de-compostela-2027/inscripcion_datos/?lang=' + encodeURIComponent(lang));
-    }
-    var partLinks = document.querySelectorAll('a[data-i18n="sub_reg_beh"]');
-    for (var p = 0; p < partLinks.length; p++) {
-        partLinks[p].setAttribute('href', 'https://eventos.emesports.es/inscripcion/i-media-maraton-santiago-de-compostela-2027/participantes/?lang=' + encodeURIComponent(lang));
+    // 3. Update embedded Emesports iframe (if present) to match active language
+    var embedFrame = document.getElementById('emesports-embed-frame');
+    if (embedFrame) {
+        var baseUrl = embedFrame.getAttribute('data-emesports-base');
+        if (baseUrl) {
+            var targetSrc = baseUrl + '?lang=' + encodeURIComponent(lang);
+            if (embedFrame.getAttribute('src') !== targetSrc) {
+                embedFrame.setAttribute('src', targetSrc);
+            }
+        }
     }
 
     // 4. Apply regulation sections & nav translations if on regulamento.html
@@ -3807,6 +3809,7 @@ document.addEventListener('click', function(e) {
 window.acceptCookies = function(e) {
     if (e) try { e.preventDefault(); } catch(err){}
     try { sessionStorage.setItem('cookies_dismissed', 'true'); } catch(err){}
+    document.documentElement.classList.add('cookies-dismissed');
     var banner = document.getElementById('cookie-banner');
     if (banner) {
         banner.classList.add('hidden');
@@ -3818,6 +3821,7 @@ window.acceptCookies = function(e) {
 window.rejectCookies = function(e) {
     if (e) try { e.preventDefault(); } catch(err){}
     try { sessionStorage.setItem('cookies_dismissed', 'true'); } catch(err){}
+    document.documentElement.classList.add('cookies-dismissed');
     var banner = document.getElementById('cookie-banner');
     if (banner) {
         banner.classList.add('hidden');
@@ -3827,6 +3831,7 @@ window.rejectCookies = function(e) {
 };
 
 window.showCookieBanner = function() {
+    document.documentElement.classList.remove('cookies-dismissed');
     var banner = document.getElementById('cookie-banner');
     if (banner) {
         banner.classList.remove('hidden');

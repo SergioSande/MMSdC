@@ -7405,7 +7405,8 @@ body:not(.inner-page) .hero .hero-actions .btn-glow:hover {
     }
 
     .footer-content {
-        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
+        align-items: center !important;
         text-align: center !important;
         gap: 24px !important;
     }
@@ -7416,15 +7417,51 @@ body:not(.inner-page) .hero .hero-actions .btn-glow:hover {
         align-items: center !important;
     }
 
+    .footer-links,
     .footer-contact,
     .footer-social {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
+        text-align: center !important;
     }
 
+    .footer-social-links,
     .social-icons {
         justify-content: center !important;
+    }
+
+    /* Mobile Touch & Scroll Fixes (No Blue Tap Box, Smooth Background, Full-Bleed Embed Alignment) */
+    a,
+    button,
+    [role="button"],
+    .btn,
+    .mega-cat-header,
+    .xacobeo-menu-toggle,
+    .lang-btn-text,
+    .social-icon-btn,
+    .sub-link-item,
+    .gest-back-btn,
+    .sched-tab-btn,
+    .faq-accordion-header {
+        -webkit-tap-highlight-color: transparent !important;
+        -webkit-touch-callout: none !important;
+        user-select: none !important;
+        -webkit-user-select: none !important;
+    }
+
+    a:focus:not(:focus-visible),
+    button:focus:not(:focus-visible),
+    .btn:focus:not(:focus-visible) {
+        outline: none !important;
+    }
+
+    body.inner-page {
+        background-attachment: scroll !important;
+    }
+
+    body.inner-page main.emesports-full-main {
+        padding-top: 64px !important;
     }
 
     .footer-bottom {
@@ -7492,6 +7529,18 @@ body:not(.inner-page) .hero .hero-actions .btn-glow:hover {
         padding: 3px 6px !important;
         font-size: 0.68rem !important;
     }
+}
+
+/* Zero-Flash Cookie Banner Dismissal & Full-Bleed Embed Main */
+html.cookies-dismissed #cookie-banner {
+    display: none !important;
+}
+
+body.inner-page main.emesports-full-main {
+    padding: 75px 0 0 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
 }
 
 

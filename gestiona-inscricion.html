@@ -2,14 +2,16 @@
 <html lang="gl" translate="no" class="notranslate">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TC9V7CZH"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45TGKC52BM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+      gtag('config', 'G-45TGKC52BM');
     </script>
     <meta name="google" content="notranslate">
     <meta charset="UTF-8">
+    <script>try{if(sessionStorage.getItem("cookies_dismissed")==="true")document.documentElement.classList.add("cookies-dismissed");}catch(e){}</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xestiona a túa Inscrición | I Media Maratón Santiago 2027</title>
     <meta name="description" content="Xestiona a túa Inscrición | I Media Maratón Santiago 2027. Web Oficial da I Media Maratón Santiago de Compostela 2027 (2 de Maio de 2027, 21.097,5 m homologados pola RFEA).">
@@ -24,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=2138.0">
+    <link rel="stylesheet" href="style.css?v=2139.0">
     <!-- Instant Synchronous Interactive Handlers -->
     <script>
 window.translations = {
@@ -3443,6 +3445,7 @@ document.addEventListener('click', function(e) {
 window.acceptCookies = function(e) {
     if (e) try { e.preventDefault(); } catch(err){}
     try { sessionStorage.setItem('cookies_dismissed', 'true'); } catch(err){}
+    document.documentElement.classList.add('cookies-dismissed');
     var banner = document.getElementById('cookie-banner');
     if (banner) {
         banner.classList.add('hidden');
@@ -3454,6 +3457,7 @@ window.acceptCookies = function(e) {
 window.rejectCookies = function(e) {
     if (e) try { e.preventDefault(); } catch(err){}
     try { sessionStorage.setItem('cookies_dismissed', 'true'); } catch(err){}
+    document.documentElement.classList.add('cookies-dismissed');
     var banner = document.getElementById('cookie-banner');
     if (banner) {
         banner.classList.add('hidden');
@@ -3463,6 +3467,7 @@ window.rejectCookies = function(e) {
 };
 
 window.showCookieBanner = function() {
+    document.documentElement.classList.remove('cookies-dismissed');
     var banner = document.getElementById('cookie-banner');
     if (banner) {
         banner.classList.remove('hidden');
@@ -3604,8 +3609,8 @@ body input[type="text"].high-contrast-input::placeholder,
                     <span class="cat-symbol"></span>
                 </div>
                 <div class="sub-panel-accordion">
-                    <a href="https://eventos.emesports.es/inscripcion/i-media-maraton-santiago-de-compostela-2027/inscripcion_datos/?lang=gl" target="_blank" rel="noopener noreferrer" class="sub-link-item" data-i18n="sub_ins_here">Inscríbete eiquí</a>
-                    <a href="https://eventos.emesports.es/inscripcion/i-media-maraton-santiago-de-compostela-2027/participantes/?lang=gl" target="_blank" rel="noopener noreferrer" class="sub-link-item" data-i18n="sub_reg_beh">Xestiona a túa inscrición</a>
+                    <a href="inscricions.html" class="sub-link-item" data-i18n="sub_ins_here">Inscríbete eiquí</a>
+                    <a href="gestiona-inscricion.html" class="sub-link-item" data-i18n="sub_reg_beh">Xestiona a túa inscrición</a>
                     <a href="prezos.html" class="sub-link-item" data-i18n="sub_prices_beh">Tramos e prezos</a>
                     <a href="que-inclue.html" class="sub-link-item" data-i18n="sub_bag_beh">Bolsa do corredor</a>
                     <a href="categorias.html" class="sub-link-item" data-i18n="sub_cat_menu">Categorías</a>
@@ -3658,81 +3663,17 @@ body input[type="text"].high-contrast-input::placeholder,
     </div>
 
     <!-- Main Content Page -->
-    <main class="page-content-wrapper">
-        <section class="section-container" style="padding-top: 110px; padding-bottom: 80px;">
-            <div class="container" style="max-width: 900px; margin: 0 auto; width: 100%; padding: 0 45px; box-sizing: border-box;">
-                <!-- Page Main Header -->
-                <div class="legal-header text-center" style="margin-bottom: 35px;">
-                    <h1 class="page-title-gold" data-i18n="gest_title" style="font-family: var(--font-serif); font-size: 2.5rem; color: #D4AF37; margin-bottom: 12px; font-weight: 900;">Xestiona a túa Inscrición</h1>
-                                    </div>
-
-                <!-- PARTICIPANT SEARCH & FILTER SYSTEM -->
-                <div class="gest-info-box">
-                    <h2 data-i18n="gest_sec1_title">Buscador Oficial de Inscritos en Tempo Real</h2>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; align-items: end; margin-bottom: 25px;">
-                        <div>
-                            <label data-i18n="gest_lbl_search" >Buscar por Nome, Apelidos, DNI ou Dorsal</label>
-                            <input type="text" id="search-input" class="high-contrast-input" data-i18n="gest_ph_search" placeholder="Ex: Carlos, 44123456X, 102...">
-                        </div>
-                                                <div>
-                            <label data-i18n="gest_lbl_cat" >Filtrar por Categoría</label>
-                            <select id="category-select" class="high-contrast-select" style="width: 100%; padding: 12px 14px; font-size: 0.9rem; box-sizing: border-box; white-space: nowrap;">
-                                <option value="all" data-i18n="gest_opt_cat_all">Todas as categorías</option>
-                                <option value="Élite" data-i18n="gest_opt_elite">Élite</option>
-                                <option value="Sénior" data-i18n="gest_opt_senior">Sénior</option>
-                                <option value="Máster A" data-i18n="gest_opt_ma">Máster A</option>
-                                <option value="Máster B" data-i18n="gest_opt_mb">Máster B</option>
-                                <option value="Máster C" data-i18n="gest_opt_mc">Máster C</option>
-                                <option value="Máster D" data-i18n="gest_opt_md">Máster D</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label data-i18n="gest_lbl_corral" >Filtrar por Caixón de Saída</label>
-                            <select id="corral-select" class="high-contrast-select" style="width: 100%; padding: 12px 14px; font-size: 0.9rem; box-sizing: border-box; white-space: nowrap;">
-                                <option value="all" data-i18n="gest_opt_corral_all">Todos os caixóns</option>
-                                <option value="Vermello" data-i18n="gest_opt_c1">Caixón 1 (Vermello)</option>
-                                <option value="Verde" data-i18n="gest_opt_c2">Caixón 2 (Verde)</option>
-                                <option value="Azul" data-i18n="gest_opt_c3">Caixón 3 (Azul)</option>
-                                <option value="Amarelo" data-i18n="gest_opt_c4">Caixón 4 (Amarelo)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <button id="reset-filters-btn" data-i18n="gest_btn_clear" style="width: 100%; padding: 14px 18px; border-radius: 10px; border: none; background: #D4AF37; color: #001123; font-weight: 900; font-size: 1rem; cursor: pointer;">Limpar Filtros</button>
-                        </div>
-                    </div>
-
-                    <!-- Results Count Badge (NO HORIZONTAL LINE ABOVE TABLE) -->
-                    <div class="gest-divider-line">
-                        <span id="results-count" style="font-weight: 800; color: #001123; font-size: 1.1rem;" data-i18n="gest_showing_0">Mostrando 0 inscritos</span>
-                        <span style="font-size: 0.9rem; color: #D4AF37; font-weight: 800;" data-i18n="gest_db_source">Base de datos oficial MSports / FGA</span>
-                    </div>
-
-                    <!-- Database Results Table (NO SURROUNDING GOLDEN BORDER) -->
-                    <div class="gest-table-container" style="border: 2.5px solid #D4AF37 !important; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);">
-                        <table style="width: 100%; border-collapse: collapse; text-align: left; color: #FFFFFF; font-size: 0.95rem;">
-                            <thead>
-                                <tr style="background: #001e3d !important; color: #D4AF37; font-family: var(--font-heading); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
-                                    <th style="padding: 16px;" data-i18n="gest_th_bib">Dorsal</th>
-                                    <th style="padding: 16px;" data-i18n="gest_th_atleta">Atleta</th>
-                                    <th style="padding: 16px;" data-i18n="gest_th_cat">Categoría</th>
-                                    <th style="padding: 16px;" data-i18n="gest_th_club">Clube / Equipo</th>
-                                    <th style="padding: 16px;" data-i18n="gest_th_corral">Caixón</th>
-                                </tr>
-                            </thead>
-                            <tbody id="runners-tbody">
-                                <!-- Populated dynamically via JS -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                                                <!-- Action Button Back to Main Page -->
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="index.html" class="gest-back-btn" data-i18n="btn_back_home">Volver á Páxina Principal</a>
-                </div>
-            </div>
-        </section>
+    <main class="page-content-wrapper emesports-full-main">
+        <iframe
+            id="emesports-embed-frame"
+            data-emesports-base="https://eventos.emesports.es/inscripcion/i-media-maraton-santiago-de-compostela-2027/participantes/"
+            src="https://eventos.emesports.es/inscripcion/i-media-maraton-santiago-de-compostela-2027/participantes/?lang=gl"
+            title="Xestiona a túa Inscrición - I Media Maratón Santiago de Compostela 2027"
+            scrolling="no"
+            style="width: 100%; height: 700px; border: none; display: block; background: #ffffff; overflow: hidden;"
+            allow="payment *; clipboard-write *"
+            loading="eager">
+        </iframe>
     </main>
 
     <!-- Global Footer -->
@@ -3758,7 +3699,6 @@ body input[type="text"].high-contrast-input::placeholder,
                 <h4 data-i18n="footer_contact_h">Contacto</h4>
                 <ul>
                     <li><a href="mailto:finishlinesantiago@gmail.com">finishlinesantiago@gmail.com</a></li>
-                    <li><a href="tel:+34640558734">640 55 87 34</a></li>
                     <li><span data-i18n="footer_loc">Santiago de Compostela, Galicia</span></li>
                 </ul>
             </div>
@@ -3768,9 +3708,6 @@ body input[type="text"].high-contrast-input::placeholder,
             <div class="footer-social-links">
                 <a href="https://www.instagram.com/mediamaratonsantiago/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Instagram" aria-label="Instagram">
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                </a>
-                <a href="https://wa.me/34640558734" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="WhatsApp" aria-label="WhatsApp">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                 </a>
                 <a href="mailto:finishlinesantiago@gmail.com" class="social-icon-btn" title="Email" aria-label="Email">
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -3793,103 +3730,15 @@ body input[type="text"].high-contrast-input::placeholder,
         </div>
     </div>
 
-    <script src="script.js?v=330.0"></script>
+    <script src="script.js?v=331.0"></script>
+    <script src="https://eventos.emesports.es/js/inscripcion/resizer/js/iframeResizer.min.js"></script>
     <script>
-        // Runner Database Filter Logic (Clean Empty Initial State - Ready for Live DB / Search)
-        const runnerData = [];
-
-        function getI18nText(key, fallback) {
-            const currentLang = localStorage.getItem('user_lang') || localStorage.getItem('selected_lang') || 'gl';
-            if (window.translations && window.translations[currentLang] && window.translations[currentLang][key] !== undefined) {
-                return window.translations[currentLang][key];
-            }
-            return fallback;
+        if (typeof iFrameResize === 'function') {
+            iFrameResize({
+                checkOrigin: false,
+                scrolling: false
+            }, '#emesports-embed-frame');
         }
-
-        function renderRunners(data) {
-            const tbody = document.getElementById('runners-tbody');
-            const countEl = document.getElementById('results-count');
-            if (!tbody) return;
-            tbody.innerHTML = '';
-            
-            const countPrefix = getI18nText('gest_showing_count', 'Mostrando');
-            const countSuffix = getI18nText('gest_registered_suffix', 'inscritos');
-            if (countEl) countEl.textContent = `${countPrefix} ${data.length} ${countSuffix}`;
-
-            if (data.length === 0) {
-                const noResultsMsg = getI18nText('gest_no_results', 'Non se atoparon inscritos cos criterios seleccionados.');
-                tbody.innerHTML = `<tr><td colspan="5" style="padding: 25px; text-align: center; color: #D4AF37; font-weight: 700; font-size: 1.05rem;">${noResultsMsg}</td></tr>`;
-                return;
-            }
-
-            data.forEach(r => {
-                let badgeBg = 'rgba(239, 68, 68, 0.4)';
-                let badgeColor = '#ffffff';
-                let corralLabel = getI18nText('gest_corral_red', '<span style="white-space: nowrap !important; display: inline-block !important;">🔴 Vermello</span>');
-
-                if (r.corral === 'Verde' || r.corral === 'Green') {
-                    badgeBg = 'rgba(34, 197, 94, 0.4)';
-                    corralLabel = getI18nText('gest_corral_green', '<span style="white-space: nowrap !important; display: inline-block !important;">🟢 Verde</span>');
-                } else if (r.corral === 'Azul' || r.corral === 'Blue') {
-                    badgeBg = 'rgba(59, 130, 246, 0.4)';
-                    corralLabel = getI18nText('gest_corral_blue', '<span style="white-space: nowrap !important; display: inline-block !important;">🔵 Azul</span>');
-                } else if (r.corral === 'Amarelo' || r.corral === 'Yellow' || r.corral === 'Amarillo') {
-                    badgeBg = 'rgba(212, 175, 55, 0.4)';
-                    corralLabel = getI18nText('gest_corral_yellow', '<span style="white-space: nowrap !important; display: inline-block !important;">🟡 Amarelo</span>');
-                }
-
-                const tr = document.createElement('tr');
-                tr.style.borderBottom = '1px solid rgba(212, 175, 55, 0.25)';
-                tr.style.background = '#001123';
-                tr.innerHTML = `
-                    <td style="padding: 16px; font-weight: 900; color: #D4AF37; font-size: 1rem; background: #001123;">#${r.bib}</td>
-                    <td style="padding: 16px; font-weight: 700; color: #FFFFFF; background: #001123;">${r.name}</td>
-                    <td style="padding: 16px; color: #FFFFFF; background: #001123;">${r.cat}</td>
-                    <td style="padding: 16px; color: #e2e8f0; background: #001123;">${r.club}</td>
-                    <td style="padding: 16px; background: #001123;"><span style="background: ${badgeBg}; color: ${badgeColor}; padding: 6px 12px; border-radius: 20px; font-weight: 800; font-size: 0.85rem; border: 1px solid #D4AF37;">${corralLabel}</span></td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderRunners(runnerData);
-
-            window.addEventListener('languageChanged', () => {
-                renderRunners(runnerData);
-            });
-
-            const searchInput = document.getElementById('search-input');
-            const categorySelect = document.getElementById('category-select');
-            const corralSelect = document.getElementById('corral-select');
-            const resetBtn = document.getElementById('reset-filters-btn');
-
-            function filterData() {
-                const query = searchInput.value.toLowerCase().trim();
-                const catVal = categorySelect.value;
-                const corralVal = corralSelect.value;
-
-                const filtered = runnerData.filter(r => {
-                    const matchesQuery = r.name.toLowerCase().includes(query) || (r.dni && r.dni.toLowerCase().includes(query)) || r.bib.includes(query);
-                    const matchesCat = catVal === 'all' || r.cat === catVal;
-                    const matchesCorral = corralVal === 'all' || r.corral === corralVal;
-                    return matchesQuery && matchesCat && matchesCorral;
-                });
-
-                renderRunners(filtered);
-            }
-
-            if(searchInput) searchInput.addEventListener('input', filterData);
-            if(categorySelect) categorySelect.addEventListener('change', filterData);
-            if(corralSelect) corralSelect.addEventListener('change', filterData);
-
-            if(resetBtn) resetBtn.addEventListener('click', () => {
-                searchInput.value = '';
-                categorySelect.value = 'all';
-                corralSelect.value = 'all';
-                renderRunners(runnerData);
-            });
-        });
     </script>
 </body>
 </html>
