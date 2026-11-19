@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" width="180" height="120" fill="none">
+    <!-- Suitcase handle (official proportions: top grip + two vertical bars) -->
+    <rect x="64" y="6" width="52" height="7" rx="3.5" fill="#FFFFFF"/>
+    <rect x="69" y="12" width="5" height="20" fill="#FFFFFF"/>
+    <rect x="106" y="12" width="5" height="20" fill="#FFFFFF"/>
+    <!-- Suitcase body formed by condensed uppercase text -->
+    <text x="90" y="48" text-anchor="middle" font-family="'DIN Condensed', 'Bahnschrift', 'Impact', 'Arial Narrow', sans-serif" font-weight="800" font-size="16" fill="#FFFFFF" letter-spacing="0.4" transform="scale(0.88, 1.08) translate(12, -2)">FINANCIADO</text>
+    <text x="90" y="65" text-anchor="middle" font-family="'DIN Condensed', 'Bahnschrift', 'Impact', 'Arial Narrow', sans-serif" font-weight="800" font-size="16" fill="#FFFFFF" letter-spacing="0.4" transform="scale(0.88, 1.08) translate(12, -2)">CO IMPOSTO</text>
+    <text x="90" y="82" text-anchor="middle" font-family="'DIN Condensed', 'Bahnschrift', 'Impact', 'Arial Narrow', sans-serif" font-weight="800" font-size="16" fill="#FFFFFF" letter-spacing="0.4" transform="scale(0.88, 1.08) translate(12, -2)">ÁS ESTADÍAS</text>
+    <text x="90" y="99" text-anchor="middle" font-family="'DIN Condensed', 'Bahnschrift', 'Impact', 'Arial Narrow', sans-serif" font-weight="800" font-size="16" fill="#FFFFFF" letter-spacing="0.4" transform="scale(0.88, 1.08) translate(12, -2)">TURÍSTICAS</text>
+    <!-- Two rounded suitcase wheels -->
+    <path d="M56 108 H66 V113 C66 116 63.5 118 61 118 C58.5 118 56 116 56 113 Z" fill="#FFFFFF"/>
+    <path d="M114 108 H124 V113 C124 116 121.5 118 119 118 C116.5 118 114 116 114 113 Z" fill="#FFFFFF"/>
+</svg>
