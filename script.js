@@ -3808,7 +3808,8 @@ document.addEventListener('click', function(e) {
 
 window.acceptCookies = function(e) {
     if (e) try { e.preventDefault(); } catch(err){}
-    try { sessionStorage.setItem('cookies_dismissed', 'true'); } catch(err){}
+    try { localStorage.setItem('cookie_choice', 'accepted'); } catch(err){}
+    if (window.loadAnalytics) window.loadAnalytics();
     document.documentElement.classList.add('cookies-dismissed');
     var banner = document.getElementById('cookie-banner');
     if (banner) {
@@ -3820,7 +3821,7 @@ window.acceptCookies = function(e) {
 
 window.rejectCookies = function(e) {
     if (e) try { e.preventDefault(); } catch(err){}
-    try { sessionStorage.setItem('cookies_dismissed', 'true'); } catch(err){}
+    try { localStorage.setItem('cookie_choice', 'rejected'); } catch(err){}
     document.documentElement.classList.add('cookies-dismissed');
     var banner = document.getElementById('cookie-banner');
     if (banner) {
@@ -3844,7 +3845,7 @@ function initCookieBannerOnLoad() {
     var banner = document.getElementById('cookie-banner');
     if (!banner) return;
     var dismissed = null;
-    try { dismissed = sessionStorage.getItem('cookies_dismissed'); } catch(e){}
+    try { dismissed = localStorage.getItem('cookie_choice') ? 'true' : null; } catch(e){}
     if (dismissed === 'true') {
         banner.classList.add('hidden');
         banner.classList.remove('show');
