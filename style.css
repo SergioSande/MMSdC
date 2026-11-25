@@ -7770,6 +7770,12 @@ body.inner-page main.emesports-full-main {
         background-image:
             linear-gradient(180deg, rgba(253, 250, 244, 0.72) 0%, rgba(244, 238, 226, 0.80) 100%),
             url('santiago_shells_bg.jpg') !important;
+        background-image:
+            linear-gradient(180deg, rgba(253, 250, 244, 0.72) 0%, rgba(244, 238, 226, 0.80) 100%),
+            image-set(
+                url('santiago_shells_bg_mobile.webp') type('image/webp'),
+                url('santiago_shells_bg.jpg') type('image/jpeg')
+            ) !important;
         background-size: 100% auto !important;
         background-repeat: repeat-y !important;
         background-position: center top !important;
@@ -7848,6 +7854,83 @@ body.inner-page main.emesports-full-main {
         letter-spacing: 0.2px !important;
     }
 }
+
+/* ==========================================================================
+   GLOBAL TOUCH & MENU TAP-HIGHLIGHT / SELECTION LOCK + MOBILE GPU PERF
+   ========================================================================== */
+html,
+body {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a,
+a *,
+button,
+button *,
+[role="button"],
+[role="button"] *,
+summary,
+summary *,
+.btn,
+.btn *,
+.xacobeo-navbar,
+.xacobeo-navbar *,
+.mega-menu-overlay,
+.mega-menu-overlay *,
+.mega-cat-header,
+.mega-cat-header *,
+.sub-link-item,
+.sub-link-item *,
+.xacobeo-menu-toggle,
+.xacobeo-menu-toggle *,
+.lang-btn-text,
+.social-icon-btn,
+.gest-back-btn,
+.sched-tab-btn,
+.faq-accordion-header,
+.faq-accordion-header *,
+.patr-card,
+.logo-box {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    user-select: none !important;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+[role="button"]:focus:not(:focus-visible),
+.mega-cat-header:focus:not(:focus-visible),
+.sub-link-item:focus:not(:focus-visible),
+.xacobeo-menu-toggle:focus:not(:focus-visible) {
+    outline: none !important;
+}
+
+@media (max-width: 768px) {
+    #cathedral-3d-img {
+        filter: none !important;
+        will-change: auto !important;
+    }
+
+    .layer-3d {
+        will-change: auto !important;
+    }
+
+    .xacobeo-navbar,
+    .mega-menu-overlay,
+    .hero-card,
+    .countdown-card,
+    .time-box,
+    .metric-card,
+    .xacobeo-card,
+    .patr-card,
+    .logo-box {
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+    }
+}
+
 
 
 

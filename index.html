@@ -110,8 +110,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- Preload Hero Image for fast mobile & desktop LCP -->
+    <link rel="preload" as="image" href="cathedral_panorama_mobile.webp" media="(max-width: 768px)" type="image/webp">
+    <link rel="preload" as="image" href="cathedral_panorama.webp" media="(min-width: 769px)" type="image/webp">
+
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css?v=2141.0">
+    <link rel="stylesheet" href="style.css?v=2142.0">
 
     <!-- Instant Synchronous Interactive Handlers -->
     <script>
@@ -3648,7 +3652,11 @@ document.addEventListener('click', function(e) {
     <div class="scene-3d-container" id="scene-3d">
         <div class="layer-3d layer-sky" id="layer-sky"></div>
         <div class="layer-3d layer-cathedral" id="layer-cathedral">
-            <img src="cathedral_panorama.jpg" id="cathedral-3d-img" alt="Catedral 3D de Santiago">
+            <picture>
+                <source media="(max-width: 768px)" srcset="cathedral_panorama_mobile.webp" type="image/webp">
+                <source srcset="cathedral_panorama.webp" type="image/webp">
+                <img src="cathedral_panorama.jpg" id="cathedral-3d-img" alt="Catedral 3D de Santiago" fetchpriority="high" decoding="async">
+            </picture>
         </div>
         <div class="layer-3d layer-particles" id="layer-particles"></div>
         <div class="layer-3d layer-vignette"></div>
@@ -3675,7 +3683,7 @@ document.addEventListener('click', function(e) {
         <!-- 3. LOGO (MATHEMATICALLY CENTERED) -->
         <div class="navbar-center">
             <a href="index.html" class="xacobeo-logo-brand" title="Media Maratón Santiago de Compostela">
-                <img src="assets/logo_cream.jpg" alt="Logo Media Maratón Santiago de Compostela" class="xacobeo-logo-img">
+                <img src="assets/logo_cream.jpg" alt="Logo Media Maratón Santiago de Compostela" class="xacobeo-logo-img" fetchpriority="high" decoding="async">
                 <div class="logo-text">
                     <span class="main-log">MEDIA MARATÓN</span>
                     <span class="sub-log">SANTIAGO DE COMPOSTELA</span>
@@ -3869,83 +3877,90 @@ document.addEventListener('click', function(e) {
                         <div class="marquee-content">
                             <!-- 1. Finish Line Santiago -->
                             <a href="https://mediamaratonsantiagodecompostela.com" target="_blank" rel="noopener noreferrer" class="logo-box principal" title="Finish Line Santiago">
-                                <img src="assets/sponsors/finishline.svg" alt="Finish Line Santiago">
+                                <img src="assets/sponsors/finishline.svg" alt="Finish Line Santiago" loading="lazy" decoding="async">
                             </a>
                             <!-- 2. Concello de Santiago de Compostela -->
                             <a href="https://santiagodecompostela.gal/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Concello de Santiago de Compostela">
-                                <img src="assets/sponsors/concello_white.svg" alt="Concello de Santiago de Compostela">
+                                <img src="assets/sponsors/concello_white.svg" alt="Concello de Santiago de Compostela" loading="lazy" decoding="async">
                             </a>
                             <!-- 3. As Cancelas -->
                             <a href="https://ascancelas.es/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Centro Comercial As Cancelas">
-                                <img src="assets/sponsors/opt_as_cancelas_white.png" alt="Centro Comercial As Cancelas">
+                                <img src="assets/sponsors/opt_as_cancelas_white.png" alt="Centro Comercial As Cancelas" loading="lazy" decoding="async">
                             </a>
                             <!-- 4. Gráficas Esteiro -->
                             <a href="https://graficasesteiro.com/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Gráficas Esteiro">
-                                <img src="assets/sponsors/opt_graficas_esteiro.png" alt="Gráficas Esteiro">
+                                <img src="assets/sponsors/opt_graficas_esteiro.png" alt="Gráficas Esteiro" loading="lazy" decoding="async">
                             </a>
                             <!-- 5. RFEA (Real Federación Española de Atletismo) -->
                             <a href="https://atletismorfea.es/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Real Federación Española de Atletismo (RFEA)">
-                                <img src="assets/sponsors/rfea_official_darkbg.png" alt="Real Federación Española de Atletismo">
+                                <img src="assets/sponsors/rfea_official_darkbg.png" alt="Real Federación Española de Atletismo" loading="lazy" decoding="async">
                             </a>
                             <!-- 6. FGA (Federación Galega de Atletismo) -->
                             <a href="https://atletismo.gal/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Federación Galega de Atletismo (FGA)">
-                                <img src="assets/sponsors/opt_fga_white.png" alt="Federación Galega de Atletismo">
+                                <img src="assets/sponsors/opt_fga_white.png" alt="Federación Galega de Atletismo" loading="lazy" decoding="async">
                             </a>
 
                             <!-- 7. Financiado co Imposto ás Estadías Turísticas -->
                             <a href="https://www.santiagoturismo.com/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Financiado co Imposto ás Estadías Turísticas">
-                                <img src="assets/sponsors/financiado_estadias.svg" alt="Financiado co Imposto ás Estadías Turísticas">
+                                <img src="assets/sponsors/financiado_estadias.svg" alt="Financiado co Imposto ás Estadías Turísticas" loading="lazy" decoding="async">
                             </a>
                             <!-- 8. Xunta de Galicia -->
                             <a href="https://www.xunta.gal/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Xunta de Galicia">
-                                <img src="assets/sponsors/xunta_galicia.svg" alt="Xunta de Galicia">
+                                <img src="assets/sponsors/xunta_galicia.svg" alt="Xunta de Galicia" loading="lazy" decoding="async">
                             </a>
                             <!-- 10. Galicia Calidade -->
                             <a href="https://www.galiciacalidade.gal/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Galicia Calidade">
-                                <img src="assets/sponsors/galicia_calidade.png" alt="Galicia Calidade">
+                                <img src="assets/sponsors/galicia_calidade.png" alt="Galicia Calidade" loading="lazy" decoding="async">
                             </a>
                             <!-- 11. SEAT | Copersa Polígono del Tambre -->
                             <a href="https://www.concesionarios.seat/copersa" target="_blank" rel="noopener noreferrer" class="logo-box" title="SEAT Copersa Polígono del Tambre">
-                                <img src="assets/sponsors/copersa_seat.svg" alt="SEAT Copersa Polígono del Tambre">
+                                <img src="assets/sponsors/copersa_seat.svg" alt="SEAT Copersa Polígono del Tambre" loading="lazy" decoding="async">
                             </a>
                             <!-- 12. Rutas Meigas -->
                             <a href="https://www.rutasmeigas.com/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Rutas Meigas">
-                                <img src="assets/sponsors/rutas_meigas.svg" alt="Rutas Meigas" style="filter: brightness(0) invert(1);">
+                                <img src="assets/sponsors/rutas_meigas.svg" alt="Rutas Meigas" style="filter: brightness(0) invert(1);" loading="lazy" decoding="async">
+                            </a>
+                            <!-- 13. Oca Hotels -->
+                            <a href="https://www.ocahotels.com/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Oca Hotels">
+                                <img src="assets/sponsors/oca_hotels_white.png" alt="Oca Hotels" loading="lazy" decoding="async">
                             </a>
 
                             <!-- Duplicated set for seamless 100% marquee loop -->
                             <a href="https://mediamaratonsantiagodecompostela.com" target="_blank" rel="noopener noreferrer" class="logo-box principal" title="Finish Line Santiago">
-                                <img src="assets/sponsors/finishline.svg" alt="Finish Line Santiago">
+                                <img src="assets/sponsors/finishline.svg" alt="Finish Line Santiago" loading="lazy" decoding="async">
                             </a>
                             <a href="https://santiagodecompostela.gal/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Concello de Santiago de Compostela">
-                                <img src="assets/sponsors/concello_white.svg" alt="Concello de Santiago de Compostela">
+                                <img src="assets/sponsors/concello_white.svg" alt="Concello de Santiago de Compostela" loading="lazy" decoding="async">
                             </a>
                             <a href="https://ascancelas.es/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Centro Comercial As Cancelas">
-                                <img src="assets/sponsors/opt_as_cancelas_white.png" alt="Centro Comercial As Cancelas">
+                                <img src="assets/sponsors/opt_as_cancelas_white.png" alt="Centro Comercial As Cancelas" loading="lazy" decoding="async">
                             </a>
                             <a href="https://graficasesteiro.com/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Gráficas Esteiro">
-                                <img src="assets/sponsors/opt_graficas_esteiro.png" alt="Gráficas Esteiro">
+                                <img src="assets/sponsors/opt_graficas_esteiro.png" alt="Gráficas Esteiro" loading="lazy" decoding="async">
                             </a>
                             <a href="https://atletismorfea.es/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Real Federación Española de Atletismo (RFEA)">
-                                <img src="assets/sponsors/rfea_official_darkbg.png" alt="Real Federación Española de Atletismo">
+                                <img src="assets/sponsors/rfea_official_darkbg.png" alt="Real Federación Española de Atletismo" loading="lazy" decoding="async">
                             </a>
                             <a href="https://atletismo.gal/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Federación Galega de Atletismo (FGA)">
-                                <img src="assets/sponsors/opt_fga_white.png" alt="Federación Galega de Atletismo">
+                                <img src="assets/sponsors/opt_fga_white.png" alt="Federación Galega de Atletismo" loading="lazy" decoding="async">
                             </a>
                             <a href="https://www.santiagoturismo.com/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Financiado co Imposto ás Estadías Turísticas">
-                                <img src="assets/sponsors/financiado_estadias.svg" alt="Financiado co Imposto ás Estadías Turísticas">
+                                <img src="assets/sponsors/financiado_estadias.svg" alt="Financiado co Imposto ás Estadías Turísticas" loading="lazy" decoding="async">
                             </a>
                             <a href="https://www.xunta.gal/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Xunta de Galicia">
-                                <img src="assets/sponsors/xunta_galicia.svg" alt="Xunta de Galicia">
+                                <img src="assets/sponsors/xunta_galicia.svg" alt="Xunta de Galicia" loading="lazy" decoding="async">
                             </a>
                             <a href="https://www.galiciacalidade.gal/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Galicia Calidade">
-                                <img src="assets/sponsors/galicia_calidade.png" alt="Galicia Calidade">
+                                <img src="assets/sponsors/galicia_calidade.png" alt="Galicia Calidade" loading="lazy" decoding="async">
                             </a>
                             <a href="https://www.concesionarios.seat/copersa" target="_blank" rel="noopener noreferrer" class="logo-box" title="SEAT Copersa Polígono del Tambre">
-                                <img src="assets/sponsors/copersa_seat.svg" alt="SEAT Copersa Polígono del Tambre">
+                                <img src="assets/sponsors/copersa_seat.svg" alt="SEAT Copersa Polígono del Tambre" loading="lazy" decoding="async">
                             </a>
                             <a href="https://www.rutasmeigas.com/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Rutas Meigas">
-                                <img src="assets/sponsors/rutas_meigas.svg" alt="Rutas Meigas" style="filter: brightness(0) invert(1);">
+                                <img src="assets/sponsors/rutas_meigas.svg" alt="Rutas Meigas" style="filter: brightness(0) invert(1);" loading="lazy" decoding="async">
+                            </a>
+                            <a href="https://www.ocahotels.com/" target="_blank" rel="noopener noreferrer" class="logo-box" title="Oca Hotels">
+                                <img src="assets/sponsors/oca_hotels_white.png" alt="Oca Hotels" loading="lazy" decoding="async">
                             </a>
                                                 </div>
                     </div>
@@ -3973,7 +3988,7 @@ document.addEventListener('click', function(e) {
         <div class="container footer-content">
             <div class="footer-brand">
                 <div class="footer-logo-wrapper">
-                    <img src="assets/logo_cream.jpg" alt="Logo Media Maratón Santiago de Compostela" class="footer-logo-img">
+                    <img src="assets/logo_cream.jpg" alt="Logo Media Maratón Santiago de Compostela" class="footer-logo-img" loading="lazy" decoding="async">
                     <h3 data-i18n="footer_title">Media Maratón Santiago de Compostela 2027</h3>
                 </div>
                 <p data-i18n="footer_desc">O evento deportivo de Santiago de Compostela 2027.</p>
